@@ -95,3 +95,27 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+# TraVision JAMstack
+
+A development studio & blog
+
+## JAM
+
+- JavaScript - [React](https://reactjs.org)
+- API - [GraphQL](https://graphql.org) - [Apollo](https://www.apollographql.com/docs/react/)
+- Markup
+
+## Build Tools
+
+[Gatsby](https://www.gatsbyjs.org)
+
+## CMS - CDN
+
+- [Contentful](https://www.contentful.com) (CMS)
+- [Fastly](http://www.fastly.com) (CDN)
+- [CloudFlare](https://www.cloudflare.com/#what-is-cloudflare) (CDN)
+
+## 💫 Deploy
+
+- [Netlify](https://www.netlify.com)
