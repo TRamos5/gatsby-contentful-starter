@@ -119,4 +119,4 @@ A development studio & blog
 ## 💫 Deploy
 
 - [Netlify](https://www.netlify.com)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ad6083ae-1b6b-4d44-a333-531865fc084d/deploy-status)](https://app.netlify.com/sites/thirsty-swirles-f72c05/deploys)
+- [![Netlify Status](https://api.netlify.com/api/v1/badges/ad6083ae-1b6b-4d44-a333-531865fc084d/deploy-status)](https://app.netlify.com/sites/thirsty-swirles-f72c05/deploys)
