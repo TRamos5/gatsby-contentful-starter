@@ -4,21 +4,34 @@ import { StaticQuery, graphql, Link } from "gatsby"
 
 import SEO from "../components/seo"
 
-// const IndexPage = () => (
-//   <Layout>
-//     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-//     <h1>Hi people</h1>
-//     <p>Welcome to your new Gatsby site.</p>
-//     <p>Now go build something great.</p>
-//     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-//       <Image />
-//     </div>
-//     <Link to="/page-2/">Go to page 2</Link>
-//   </Layout>
-// )
-
-// export default IndexPage
-
+const style = ({
+  wrapper: {
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'hidden'
+  },
+  backgroundImg: {
+    height: '100vh',
+    width: '100vw',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    zIndex: '-5'
+  },
+  main: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh'
+  },
+  title: {
+    color: 'white'
+  },
+  content: {
+    color: 'grey'
+  }
+})
 const HomePage = () => (
   <StaticQuery
     query={graphql`
@@ -44,9 +57,13 @@ const HomePage = () => (
       }
     }) => (
       <>
-        <h1>{title}</h1>
-        <img src={url} />
-        <p>{content}</p>
+      <div class="wrapper" style={style.wrapper}>
+        <img style={style.backgroundImg} src={url} />
+        <div style={style.main}>
+          <h1 style={style.title}>{title}</h1>
+          <h3 style={style.content}>{content}</h3>
+        </div>
+      </div>
       </>
     )}
   />
