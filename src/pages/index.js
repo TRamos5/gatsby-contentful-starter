@@ -1,8 +1,9 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 
 
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
+import Particle from "../components/particle"
 
 const style = ({
   wrapper: {
@@ -59,6 +60,7 @@ const HomePage = () => (
       <>
       <div class="wrapper" style={style.wrapper}>
         <img style={style.backgroundImg} src={url} />
+        <Particle />
         <div style={style.main}>
           <h1 style={style.title}>{title}</h1>
           <h3 style={style.content}>{content}</h3>
