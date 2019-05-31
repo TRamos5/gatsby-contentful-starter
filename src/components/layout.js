@@ -9,8 +9,36 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "./layout.css"
+import ContactButton from "./contactButton"
+
+const style = ({
+  bottomContain: {
+    boxSizing: 'border-box',
+    margin: '10% auto',
+    maxWidth: '1140px',
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    width: '100%'
+  },
+  footerContain: {
+    webkitBoxAlign: 'center',
+    webkitBoxPack: 'center',
+    alignItems: 'center',
+    boxSizing: 'border-box',
+    display: 'flex',
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    maxHeight: '100%',
+    maxWidth: '100%',
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    width: '100%',
+    backgroundColor: '#353c43',
+    height: '25vh'
+  }
+})
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -25,20 +53,21 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+        <div>
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
+          <div style={style.bottomContain} className="container">
+              <h1>Your Vision Our Code</h1>
+              <p>We love what we do and we believe your brand should be showcased in the most extraordinary way.</p>
+              <hr/>
+              <div className="buttonDiv">
+                <ContactButton />
+              </div>
+          </div>
+          <footer style={style.footerContain}>
+            <img src={'health.png'} alt="logo" />
+            © {new Date().getFullYear()}, Powered by
             {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <a href="">TraVision</a>
           </footer>
         </div>
       </>

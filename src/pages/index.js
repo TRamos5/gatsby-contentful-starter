@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 
 // import SEO from "../components/seo"
+import Layout from "../components/layout"
 import Particle from "../components/particle"
 
 const style = ({
@@ -58,6 +59,7 @@ const HomePage = () => (
       }
     }) => (
       <>
+      <Layout>
       <div class="wrapper" style={style.wrapper}>
         <img style={style.backgroundImg} src={url} />
         <Particle />
@@ -66,6 +68,7 @@ const HomePage = () => (
           <h3 style={style.content}>{content}</h3>
         </div>
       </div>
+      </Layout>
       </>
     )}
   />
