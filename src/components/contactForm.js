@@ -17,6 +17,19 @@ const styles = theme => ({
   formControl: {
     margin: theme.spacing.unit,
     width: '20%'
+  },
+  contact: {
+    fontSize: '2rem',
+    lineHeight: 1.2,
+    marginBottom: '.5rem',
+    marginTop: 0
+  },
+  emailLink: {
+    textDecoration: 'none',
+    paddingTop: '2%',
+    hover: {
+      textDecoration: 'underline'
+    }
   }
 });
 
@@ -57,8 +70,18 @@ class ContactForm extends React.Component {
 
     return (
       <div className={classes.container}>
-        <h3>CONTACT</h3>
-        <h5><a href="mailto:travis.ramos1@gmail.com" className="emailLink">travis.ramos1@gmail.com</a></h5>
+        <h3 className={classes.contact}>CONTACT</h3>
+        <h5><a className={classes.emailLink} href="mailto:travis.ramos1@gmail.com">travis.ramos1@gmail.com</a></h5>
+
+        <form 
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
         <FormControl className={classes.formControl}>
           <InputLabel htmlFor="component-simple">Name</InputLabel>
           <Input id="component-simple" value={this.state.name} onChange={this.handleNameChange} />
@@ -76,12 +99,7 @@ class ContactForm extends React.Component {
         </FormControl>
 
         <Button size="medium" color="#343c42" variant="outlined" type="submit" onClick={this.handleSubmit}>Submit</Button>
-        <style jsx>{`
-            .emailLink {
-                color: black;
-                padding-top: 2%;
-            }
-        `}</style>
+        </form>
       </div>
     );
   }

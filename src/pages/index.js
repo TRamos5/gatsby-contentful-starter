@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 
 // import SEO from "../components/seo"
-import Layout from "../components/layout"
+import Layout from "../components/homeLayout"
 import Particle from "../components/particle"
 
 const style = ({
@@ -28,10 +28,12 @@ const style = ({
     height: '100vh'
   },
   title: {
-    color: 'white'
+    color: 'white',
+    fontSize: '6rem'
   },
   content: {
-    color: 'grey'
+    color: 'grey',
+    fontSize: '1rem'
   }
 })
 const HomePage = () => (

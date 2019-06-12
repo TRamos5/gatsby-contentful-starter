@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import "./layout.css"
 import ContactButton from "./contactButton"
+import BlogButton from "./blogButton"
 
 const style = ({
   bottomContain: {
@@ -37,6 +38,10 @@ const style = ({
     width: '100%',
     backgroundColor: '#353c43',
     height: '25vh'
+  },
+  buttonDiv: {
+    boxSizing: 'border-box',
+    display: 'flex'
   }
 })
 
@@ -59,8 +64,9 @@ const Layout = ({ children }) => (
               <h1>Your Vision Our Code</h1>
               <p>We love what we do and we believe your brand should be showcased in the most extraordinary way.</p>
               <hr/>
-              <div className="buttonDiv">
+              <div style={style.buttonDiv} className="buttonDiv">
                 <ContactButton />
+                <BlogButton />
               </div>
           </div>
           <footer style={style.footerContain}>
