@@ -72,7 +72,7 @@ class ContactForm extends React.Component {
     const { name, email, message } = this.state
 
     event.preventDefault();
-    
+
     this.setState({
       name: '',
       email: '',
