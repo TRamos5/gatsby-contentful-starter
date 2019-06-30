@@ -33,6 +33,12 @@ const styles = theme => ({
   }
 });
 
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+}
+
 class ContactForm extends React.Component {
   state = {
     name: '',
@@ -54,10 +60,19 @@ class ContactForm extends React.Component {
     this.setState({ message: event.target.value });
   };
   handleSubmit = event => {
-    event.preventDefault()
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
 
     const { name, email, message } = this.state
 
+    event.preventDefault();
+    
     this.setState({
       name: '',
       email: '',
@@ -73,13 +88,7 @@ class ContactForm extends React.Component {
         <h3 className={classes.contact}>CONTACT</h3>
         <h5><a className={classes.emailLink} href="mailto:travis.ramos1@gmail.com">travis.ramos1@gmail.com</a></h5>
 
-        <form 
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
         <FormControl className={classes.formControl}>
