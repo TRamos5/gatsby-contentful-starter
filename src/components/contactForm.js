@@ -98,6 +98,7 @@ class ContactForm extends React.Component {
           method="post"
           netlify
           data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
@@ -136,7 +137,7 @@ class ContactForm extends React.Component {
             </label>
           </div>
           <div>
-            <button type="submit" onClick={this.handleSubmit}>Send</button>
+            <button type="submit">Send</button>
           </div>
           {/* <FormControl className={classes.formControl}>
           <InputLabel htmlFor="component-simple">Name</InputLabel>
