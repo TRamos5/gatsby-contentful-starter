@@ -96,7 +96,7 @@ class ContactForm extends React.Component {
         <form
           name="contact"
           method="post"
-          data-netlify="true"
+          netlify
           data-netlify-honeypot="bot-field"
         >
           <input type="hidden" name="bot-field" />
