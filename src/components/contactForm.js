@@ -33,7 +33,7 @@ const styles = theme => ({
   },
 })
 
-const encode = data => {
+const encode = (data) => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&")
@@ -60,15 +60,20 @@ class ContactForm extends React.Component {
     this.setState({ message: event.target.value })
   }
   handleSubmit = event => {
-    fetch("/", {
+    event.preventDefault();
+    const data = [...event.target.elements]
+    .filter(element => Boolean(element.name))
+    .reduce((json, element) => {
+      json[element.name] = element.value;
+      return json;
+    }, {});
+    fetch(event.target.action, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...this.state }),
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error))
-
-    event.preventDefault()
 
     this.setState({
       name: "",
@@ -100,7 +105,7 @@ class ContactForm extends React.Component {
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
         >
-          <input type="hidden" name="bot-field" />
+          {/* <input type="hidden" name="bot-field" /> */}
           <input type="hidden" name="form-name" value="contact" />
           <div>
             <label htmlFor="name">
