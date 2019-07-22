@@ -34,7 +34,6 @@ const styles = theme => ({
 })
 
 class ContactForm extends React.Component {
-
   constructor(props) {
     super(props)
     this.ContactForm = React.createRef()
@@ -63,28 +62,6 @@ class ContactForm extends React.Component {
   handleMessageChange = event => {
     this.setState({ message: event.target.value })
   }
-  // handleSubmit = event => {
-  //   event.preventDefault();
-  //   const data = [...event.target.elements]
-  //   .filter(element => Boolean(element.name))
-  //   .reduce((json, element) => {
-  //     json[element.name] = element.value;
-  //     return json;
-  //   }, {});
-  //   fetch(event.target.action, {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: encode({ "form-name": "contact", ...this.state }),
-  //   })
-  //     .then(() => alert("Success!"))
-  //     .catch(error => alert(error))
-
-  //   this.setState({
-  //     name: "",
-  //     email: "",
-  //     message: "",
-  //   })
-  // }
 
   handleSubmit = e => {
     e.preventDefault()
@@ -135,11 +112,10 @@ class ContactForm extends React.Component {
           <input type="hidden" name="form-name" value="contact" />
           <div hidden>
             <label>
-              Don’t fill this out:{" "}
-              <input name="bot-field" />
+              Don’t fill this out: <input name="bot-field" />
             </label>
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="name">
               Name
               <input
@@ -175,24 +151,37 @@ class ContactForm extends React.Component {
           </div>
           <div>
             <button type="submit">Send</button>
-          </div>
-          {/* <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="component-simple">Name</InputLabel>
-          <Input id="component-simple" value={this.state.name} onChange={this.handleNameChange} />
-        </FormControl>
+          </div> */}
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="component-simple">Name</InputLabel>
+            <Input
+              id="component-simple"
+              value={this.state.name}
+              onChange={this.handleNameChange}
+            />
+          </FormControl>
 
-        <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="component-simple">Email</InputLabel>
-          <Input id="component-simple" value={this.state.email} onChange={this.handleEmailChange} />
-        </FormControl>
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="component-simple">Email</InputLabel>
+            <Input
+              id="component-simple"
+              value={this.state.email}
+              onChange={this.handleEmailChange}
+            />
+          </FormControl>
 
-        <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="component-simple">Message</InputLabel>
-          <Input multiline
-          rowsMax="4" id="component-simple" value={this.state.message} onChange={this.handleMessageChange} />
-        </FormControl> */}
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="component-simple">Message</InputLabel>
+            <Input
+              multiline
+              rowsMax="4"
+              id="component-simple"
+              value={this.state.message}
+              onChange={this.handleMessageChange}
+            />
+          </FormControl>
 
-          {/* <Button
+          <Button
             size="medium"
             color="#343c42"
             variant="outlined"
@@ -200,7 +189,7 @@ class ContactForm extends React.Component {
             onClick={this.handleSubmit}
           >
             Submit
-          </Button> */}
+          </Button>
         </form>
       </div>
     )
