@@ -93,7 +93,7 @@ class ContactForm extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
+      .then(() => alert("Success!"))
       .catch(error => alert(error))
 
     this.setState({
@@ -131,7 +131,7 @@ class ContactForm extends React.Component {
           <div hidden>
             <label>
               Don’t fill this out:{" "}
-              <input name="bot-field" onChange={this.handleChange} />
+              <input name="bot-field" />
             </label>
           </div>
           <div>
