@@ -33,17 +33,21 @@ const styles = theme => ({
   },
 })
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
-
 class ContactForm extends React.Component {
-  state = {
-    name: "",
-    email: "",
-    message: "",
+
+  constructor(props) {
+    super(props)
+    this.ContactForm = React.createRef()
+    this.state = {
+      name: "",
+      email: "",
+      message: "",
+    }
+  }
+  encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
   }
 
   componentDidMount() {
@@ -84,11 +88,11 @@ class ContactForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const form = e.target
+    const form = this.ContactForm.current
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
+      body: this.encode({
         "form-name": form.getAttribute("name"),
         ...this.state,
       }),
@@ -125,6 +129,7 @@ class ContactForm extends React.Component {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
+          ref={this.ContactForm}
         >
           {/* <input type="hidden" name="bot-field" /> */}
           <input type="hidden" name="form-name" value="contact" />
