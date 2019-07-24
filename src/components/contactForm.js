@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { navigate } from "gatsby"
 import { withStyles } from "@material-ui/core/styles"
 import FormControl from "@material-ui/core/FormControl"
 import Input from "@material-ui/core/Input"
@@ -36,7 +37,6 @@ const styles = theme => ({
 class ContactForm extends React.Component {
   constructor(props) {
     super(props)
-    this.ContactForm = React.createRef()
     this.state = {
       name: "",
       email: "",
@@ -63,8 +63,8 @@ class ContactForm extends React.Component {
     this.setState({ message: event.target.value })
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
+  handleSubmit = event => {
+    event.preventDefault()
     const form = this.ContactForm.current
     fetch("/", {
       method: "POST",
@@ -74,7 +74,7 @@ class ContactForm extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => alert("Success!"))
+      .then(() => navigate("/"))
       .catch(error => alert(error))
 
     this.setState({
@@ -105,78 +105,39 @@ class ContactForm extends React.Component {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          onSubmit={this.handleSubmit}
-          ref={this.ContactForm}
         >
-          {/* <input type="hidden" name="bot-field" /> */}
+          <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
           <div hidden>
             <label>
               Don’t fill this out: <input name="bot-field" />
             </label>
           </div>
-          {/* <div>
-            <label htmlFor="name">
-              Name
-              <input
-                type="text"
-                name="name"
-                value={this.state.name}
-                onChange={this.handleNameChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="email">
-              Email
-              <input
-                type="email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleEmailChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="message">
-              Message
-              <textarea
-                name="message"
-                value={this.state.message}
-                onChange={this.handleMessageChange}
-                rows="6"
-                required
-              />
-            </label>
-          </div>
-          <div>
-            <button type="submit">Send</button>
-          </div> */}
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="component-simple">Name</InputLabel>
+            <InputLabel>Name</InputLabel>
             <Input
               id="component-simple"
-              value={this.state.name}
+              value={name}
               onChange={this.handleNameChange}
             />
           </FormControl>
 
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="component-simple">Email</InputLabel>
+            <InputLabel>Email</InputLabel>
             <Input
               id="component-simple"
-              value={this.state.email}
+              value={email}
               onChange={this.handleEmailChange}
             />
           </FormControl>
 
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="component-simple">Message</InputLabel>
+            <InputLabel>Message</InputLabel>
             <Input
               multiline
               rowsMax="4"
               id="component-simple"
-              value={this.state.message}
+              value={message}
               onChange={this.handleMessageChange}
             />
           </FormControl>
