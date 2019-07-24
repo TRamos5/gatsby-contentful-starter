@@ -105,6 +105,7 @@ class ContactForm extends React.Component {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
@@ -147,7 +148,6 @@ class ContactForm extends React.Component {
             color="#343c42"
             variant="outlined"
             type="submit"
-            onClick={this.handleSubmit}
           >
             Submit
           </Button>
