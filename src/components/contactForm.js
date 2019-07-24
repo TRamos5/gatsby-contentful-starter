@@ -37,6 +37,7 @@ const styles = theme => ({
 class ContactForm extends React.Component {
   constructor(props) {
     super(props)
+    this.ContactForm = React.createRef()
     this.state = {
       name: "",
       email: "",
@@ -106,6 +107,7 @@ class ContactForm extends React.Component {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
+          ref={this.ContactForm}
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
