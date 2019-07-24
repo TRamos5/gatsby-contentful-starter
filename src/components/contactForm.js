@@ -74,7 +74,7 @@ class ContactForm extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => navigate("/"))
+      .then(() => alert("Success!"))
       .catch(error => alert(error))
 
     this.setState({
