@@ -13,7 +13,13 @@ const styles = theme => ({
     alignItems: "center",
     flexDirection: "column",
     flexWrap: "wrap",
-    padding: 5,
+    padding: 2,
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    width: "100%",
+    alignItems: "center"
   },
   formControl: {
     margin: theme.spacing.unit,
@@ -75,7 +81,7 @@ class ContactForm extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => alert("Success!"))
+      .then(() => navigate("/"))
       .catch(error => alert(error))
 
     this.setState({
@@ -108,6 +114,7 @@ class ContactForm extends React.Component {
           data-netlify-honeypot="bot-field"
           onSubmit={this.handleSubmit}
           ref={this.ContactForm}
+          className={classes.form}
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
@@ -120,8 +127,11 @@ class ContactForm extends React.Component {
             <InputLabel>Name</InputLabel>
             <Input
               id="component-simple"
+              type="text"
+              name="name"
               value={name}
               onChange={this.handleNameChange}
+              required
             />
           </FormControl>
 
@@ -129,8 +139,11 @@ class ContactForm extends React.Component {
             <InputLabel>Email</InputLabel>
             <Input
               id="component-simple"
+              type="email"
+              name="email"
               value={email}
               onChange={this.handleEmailChange}
+              required
             />
           </FormControl>
 
@@ -138,10 +151,12 @@ class ContactForm extends React.Component {
             <InputLabel>Message</InputLabel>
             <Input
               multiline
+              name="message"
               rowsMax="4"
               id="component-simple"
               value={message}
               onChange={this.handleMessageChange}
+              required
             />
           </FormControl>
 
