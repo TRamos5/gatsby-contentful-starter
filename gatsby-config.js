@@ -1,4 +1,5 @@
 const dotenv = require("dotenv");
+const path = require(`path`)
 
 if (process.env.ENVIRONMENT !== "production") {
   dotenv.config();
@@ -10,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: `TraVision`,
     description: `Development Studio and Blog`,
-    author: `@travisramos`,
+    author: `@t_ram5`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,7 +19,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/`
       },
     },
     `gatsby-transformer-sharp`,
