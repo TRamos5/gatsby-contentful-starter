@@ -6,6 +6,7 @@ import "./layout.css"
 import ContactButton from "./contactButton"
 import BlogButton from "./blogButton"
 import Footer from "./foooter"
+import Clients from "./pastClients"
 
 const style = ({
   bottomContain: {
@@ -46,6 +47,7 @@ const Layout = ({ children }) => (
                 <BlogButton />
               </div>
           </div>
+          <Clients />
           <Footer />
         </div>
       </>
