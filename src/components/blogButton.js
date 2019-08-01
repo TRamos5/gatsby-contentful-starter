@@ -16,7 +16,7 @@ class BlogButton extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-        <Button className={classes.button} href="/blogs" variant="outlined">CHECKOUT OUR BLOG</Button>
+        <Button className={classes.button} href="/blogs" variant="outlined">CHECKOUT MY BLOG</Button>
     );
   }
 }

@@ -6,7 +6,6 @@ import "./layout.css"
 import ContactButton from "./contactButton"
 import BlogButton from "./blogButton"
 import Footer from "./foooter"
-import Clients from "./pastClients"
 
 const style = ({
   bottomContain: {
@@ -39,15 +38,14 @@ const Layout = ({ children }) => (
         <div>
           <main>{children}</main>
           <div style={style.bottomContain} className="container">
-              <h1>Your Vision Our Code</h1>
-              <p>We love what we do and we believe your brand should be showcased in the most extraordinary way.</p>
+              <h1>Learning Opens The Gates To Freedom</h1>
+              <p>Everyone has a vision, let's work together to see it through! Part of my passion is teaching others what I have learned myself.</p>
               <hr/>
               <div style={style.buttonDiv} className="buttonDiv">
                 <ContactButton />
                 <BlogButton />
               </div>
           </div>
-          <Clients />
           <Footer />
         </div>
       </>
