@@ -19,7 +19,7 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    alignItems: "center",
+    alignItems: "center"
   },
   formControl: {
     margin: theme.spacing.unit,
@@ -72,18 +72,16 @@ class ContactForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    const data = [...event.target.elements]
-      .filter(element => Boolean(element.name))
-      .reduce((json, element) => {
-        json[element.name] = element.value
-        return json
-      }, {})
-    fetch(event.target.action, {
+    const form = this.ContactForm.current
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode({ "form-name": "contact", ...this.state }),
+      body: this.encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state,
+      }),
     })
-      .then(() => alert("Success!"))
+      .then(() => navigate("/"))
       .catch(error => alert(error))
 
     this.setState({
@@ -92,27 +90,6 @@ class ContactForm extends React.Component {
       message: "",
     })
   }
-
-  // handleSubmit = event => {
-  //   event.preventDefault()
-  //   const form = this.ContactForm.current
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: this.encode({
-  //       "form-name": form.getAttribute("name"),
-  //       ...this.state,
-  //     }),
-  //   })
-  //     .then(() => navigate("/"))
-  //     .catch(error => alert(error))
-
-  //   this.setState({
-  //     name: "",
-  //     email: "",
-  //     message: "",
-  //   })
-  // }
 
   render() {
     const { classes } = this.props
@@ -139,12 +116,11 @@ class ContactForm extends React.Component {
           ref={this.ContactForm}
           className={classes.form}
         >
-          <input type="hidden" name="bot-field" />
+          {/* <input type="hidden" name="bot-field" /> */}
           <input type="hidden" name="form-name" value="contact" />
           <div hidden>
             <label>
-              Don’t fill this out:{" "}
-              <input name="bot-field" onChange={this.handleChange} />
+              Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
             </label>
           </div>
 
