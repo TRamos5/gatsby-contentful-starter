@@ -126,7 +126,7 @@ class ContactForm extends React.Component {
 
           {/* *** new input *** */}
 
-          <div>
+          {/* <div>
             <label htmlFor="name">
               Name
               <input
@@ -162,9 +162,9 @@ class ContactForm extends React.Component {
           </div>
           <div>
             <button type="submit">Send</button>
-          </div>
-          {/* <FormControl className={classes.formControl}>
-            <InputLabel>Name</InputLabel>
+          </div> */}
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="name">Name</InputLabel>
             <Input
               id="component-simple"
               type="text"
@@ -176,7 +176,7 @@ class ContactForm extends React.Component {
           </FormControl>
 
           <FormControl className={classes.formControl}>
-            <InputLabel>Email</InputLabel>
+            <InputLabel htmlFor="email">Email</InputLabel>
             <Input
               id="component-simple"
               type="email"
@@ -188,7 +188,7 @@ class ContactForm extends React.Component {
           </FormControl>
 
           <FormControl className={classes.formControl}>
-            <InputLabel>Message</InputLabel>
+            <InputLabel htmlFor="message">Message</InputLabel>
             <Input
               multiline
               name="message"
@@ -207,7 +207,7 @@ class ContactForm extends React.Component {
             type="submit"
           >
             Submit
-          </Button> */}
+          </Button>
         </form>
       </div>
     )
