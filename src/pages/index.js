@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from "gatsby"
 // import SEO from "../components/seo"
 import Layout from "../components/homeLayout"
 import Particle from "../components/particle"
-import Form from "../components/contactForm"
 
 const style = ({
   wrapper: {
@@ -66,7 +65,6 @@ const HomePage = () => (
       <div class="wrapper" style={style.wrapper}>
         <img style={style.backgroundImg} src={url} />
         <Particle />
-        <Form />
         <div style={style.main}>
           <h1 style={style.title}>{title}</h1>
           <h3 style={style.content}>{content}</h3>
