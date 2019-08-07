@@ -22,19 +22,8 @@ const style = ({
   }
 })
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
+const HomeLayout = ({ children }) => {
+    return (
         <div>
           <main>{children}</main>
           <div style={style.bottomContain} className="container">
@@ -48,13 +37,11 @@ const Layout = ({ children }) => (
           </div>
           <Footer />
         </div>
-      </>
-    )}
-  />
-)
+    )
+}
 
-Layout.propTypes = {
+HomeLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default HomeLayout

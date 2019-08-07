@@ -632,7 +632,7 @@ header {
   the inline styles just for this example.
   in production code, avoid using it where
   possible*/
-  background-color: cadetblue !important;
+  background-color: cadetblue
 }
 
 header div {

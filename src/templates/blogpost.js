@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Layout from "../components/homeLayout";
+import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Img from "gatsby-image"
 
 const BlogPost = ({ data }) => {
     const { title, body, image, tags } = data.contentfulBlogPost;
@@ -10,7 +11,8 @@ const BlogPost = ({ data }) => {
             <SEO title={title} />
             <div className="blogpost">
                 <h1>{title}</h1>
-                <img alt={title} src={image.file.url} />
+                {/* <img alt={title} src={image.file.url} /> */}
+                <Img alt={title} fluid={image.fluid} />
                 <div className="tags">
                     {tags.map(tag => (
                         <span className="tag" key={tag}>
@@ -29,17 +31,21 @@ const BlogPost = ({ data }) => {
 export default BlogPost;
 
 export const pageQuery = graphql`
-    query($slug: String!) {
+    query BlogPostBySlug ($slug: String!) {
+        site {
+            siteMetadata {
+              title
+            }
+          }
         contentfulBlogPost(slug: { eq: $slug }) {
             title 
-            slug
+            image {
+                fluid(maxWidth: 1180, background: "rgb:000000") {
+                  ...GatsbyContentfulFluid_tracedSVG
+                }
+              }
             body {
                 body
-            }
-            image {
-                file {
-                    url
-                }
             }
             tags
         }

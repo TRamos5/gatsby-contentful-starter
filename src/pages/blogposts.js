@@ -1,8 +1,9 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
+import React from "react"
+import { Link, graphql } from "gatsby"
 
-import Layout from "../components/homeLayout";
-import SEO from "../components/seo";
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Img from "gatsby-image"
 
 const BlogPosts = ({ data }) => {
     const blogPosts = data.allContentfulBlogPost.edges;
@@ -13,6 +14,7 @@ const BlogPosts = ({ data }) => {
         <div className="blogposts">
           {blogPosts.map(({ node: post }) => (
             <div key={post.id}>
+              <Img alt={post.title} fluid={post.image.fluid} />
               <Link to={`/blogpost/${post.slug}`}>{post.title}</Link>
             </div>
           ))}
@@ -37,8 +39,8 @@ export const query = graphql`
             body
           }
           image {
-            file {
-              url
+            fluid(maxWidth: 1180, background: "rgb:000000") {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           tags

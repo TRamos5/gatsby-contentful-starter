@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 
 // import SEO from "../components/seo"
@@ -44,8 +45,8 @@ const HomePage = () => (
           title
           content
           image {
-            file {
-              url
+            fixed {
+              ...GatsbyContentfulFixed_withWebp_noBase64
             }
           }
         }
@@ -56,14 +57,15 @@ const HomePage = () => (
         title,
         content,
         image: {
-          file: { url }
+          fixed
         }
       }
     }) => (
       <>
       <Layout>
       <div class="wrapper" style={style.wrapper}>
-        <img style={style.backgroundImg} src={url} />
+        {/* <img style={style.backgroundImg} src={url} /> */}
+        <Img style={style.backgroundImg} fixed={fixed} />
         <Particle />
         <div style={style.main}>
           <h1 style={style.title}>{title}</h1>
