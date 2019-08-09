@@ -50,6 +50,14 @@ const HomePage = () => (
             }
           }
         }
+        astronomy: file(relativePath: { eq: "images/astronomy.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 2000, quality: 100) {
+              ...GatsbyImageSharpFluid_tracedSVG
+              presentationWidth
+            }
+          }
+        }
       }
     `}
     render={({
@@ -57,7 +65,12 @@ const HomePage = () => (
         title,
         content,
         image: {
-          fixed
+          //fixed
+        }
+      },
+      astronomy: {
+        childImageSharp: {
+          fluid
         }
       }
     }) => (
@@ -65,7 +78,8 @@ const HomePage = () => (
       <Layout>
       <div class="wrapper" style={style.wrapper}>
         {/* <img style={style.backgroundImg} src={url} /> */}
-        <Img style={style.backgroundImg} fixed={fixed} />
+        {/* <Img style={style.backgroundImg} fixed={fixed} /> */}
+        <Img style={style.backgroundImg} fluid={fluid} />
         <Particle />
         <div style={style.main}>
           <h1 style={style.title}>{title}</h1>
