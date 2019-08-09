@@ -14,7 +14,7 @@ const style = ({
     overflow: 'hidden'
   },
   backgroundImg: {
-    height: '100vh',
+    height: '110vh',
     width: '100vw',
     position: 'absolute',
     top: '0',
@@ -52,9 +52,8 @@ const HomePage = () => (
         }
         astronomy: file(relativePath: { eq: "images/astronomy.png" }) {
           childImageSharp {
-            fluid(maxWidth: 2000, quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid_tracedSVG
-              presentationWidth
             }
           }
         }
