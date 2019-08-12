@@ -14,7 +14,7 @@ const style = ({
     overflow: 'hidden'
   },
   backgroundImg: {
-    height: '110vh',
+    height: '100vh',
     width: '100vw',
     position: 'absolute',
     top: '0',

@@ -48,6 +48,10 @@ export const pageQuery = graphql`
                 body
             }
             tags
+            author {
+                authorName
+              }
+              date(formatString: "MM-DD-YYYY")
         }
     }
 `

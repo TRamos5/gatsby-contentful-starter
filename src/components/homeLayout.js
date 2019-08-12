@@ -10,7 +10,6 @@ import Footer from "./foooter"
 const style = ({
   bottomContain: {
     boxSizing: 'border-box',
-    marginTop: '10%',
     margin: '10% auto',
     maxWidth: '1140px',
     paddingLeft: '15px',
