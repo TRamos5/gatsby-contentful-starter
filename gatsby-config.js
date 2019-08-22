@@ -43,6 +43,7 @@ module.exports = {
         accessToken
       }
     },
+    `@contentful/gatsby-transformer-contentful-richtext`,
     {
       resolve: `gatsby-plugin-material-ui`
     },
