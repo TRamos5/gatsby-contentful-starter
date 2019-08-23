@@ -662,6 +662,17 @@ h1 {
   font-family: "Open Sans";
 }
 
+.title {
+  color: white;
+  font-size: 6rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
 img {
   margin-bottom: 8px;
 }

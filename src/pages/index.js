@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 // import SEO from "../components/seo"
 import Layout from "../components/homeLayout"
 import Particle from "../components/particle"
+import "../components/layout.css"
 
 const style = ({
   wrapper: {
@@ -27,10 +28,6 @@ const style = ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh'
-  },
-  title: {
-    color: 'white',
-    fontSize: '6rem'
   },
   content: {
     color: 'grey',
@@ -82,7 +79,7 @@ const HomePage = () => (
         {/* <Img style={style.backgroundImg} fluid={fluid} /> */}
         <Particle />
         <div style={style.main}>
-          <h1 style={style.title}>{title}</h1>
+          <h1 className="title">{title}</h1>
           <h3 style={style.content}>{content}</h3>
         </div>
       </div>
