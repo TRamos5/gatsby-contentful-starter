@@ -45,8 +45,8 @@ const HomePage = () => (
           title
           content
           image {
-            fixed {
-              ...GatsbyContentfulFixed_withWebp_noBase64
+            file {
+              url
             }
           }
         }
@@ -65,6 +65,7 @@ const HomePage = () => (
         content,
         image: {
           //fixed
+          file: { url }
         }
       },
       astronomy: {
@@ -76,9 +77,9 @@ const HomePage = () => (
       <>
       <Layout>
       <div class="wrapper" style={style.wrapper}>
-        {/* <img style={style.backgroundImg} src={url} /> */}
+        <img style={style.backgroundImg} src={url} />
         {/* <Img style={style.backgroundImg} fixed={fixed} /> */}
-        <Img style={style.backgroundImg} fluid={fluid} />
+        {/* <Img style={style.backgroundImg} fluid={fluid} /> */}
         <Particle />
         <div style={style.main}>
           <h1 style={style.title}>{title}</h1>
