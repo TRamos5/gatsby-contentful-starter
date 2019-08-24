@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
   return (
     <Container>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div style={{ maxWidth: 1000, margin: '0 auto', padding: 10 }}>
+      <div style={{ maxWidth: '960px', margin: '0 auto', padding: '0 1.0875rem 1.45rem' }}>
         <main>{children}</main>
       </div>
       <Footer />

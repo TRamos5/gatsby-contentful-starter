@@ -1,51 +1,51 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+// import Tags from "../components/Tags"
+import Button from "@material-ui/core/Button"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
-const style = {
-  postDiv: {
-  boxSizing: 'border-box',
-  margin: '0 0 100px',
-  padding: '3em 5em',
-  },
-  article: {
-  boxSizing: 'border-box',
-  color: '#000',
-  fontSize: '1.3rem',
-  margin: '0',
-  padding: '0',
-  }
-}
-
 const BlogPosts = ({ data }) => {
-    const blogPosts = data.allContentfulBlogPost.edges;
-    return (
-      <Layout>
-        <SEO title="Blog posts" />
-              <h1>{"TraVision Blog"}</h1>
-              <h4>{"Written by Travis Ramos"}</h4>
-        <div className="blogposts">
-          {blogPosts.map(({ node: post }) => (
-            <div style={style.postDiv} key={post.id}>
-              <article style={style.article}>
-                <h1><Link to={`/blogpost/${post.slug}`}>{post.title}</Link></h1>
-                <Link to={`/blogpost/${post.slug}`}>
-                  <Img alt={post.title} fluid={post.image.fluid} />
-                </Link>
-                <h4>{post.excerpt}</h4>
-                <h4>{post.date}</h4>
-              </article>
+  const blogPosts = data.allContentfulBlogPost.edges
+  return (
+    <Layout>
+      <SEO title="Blog posts" />
+      <div className="blogposts">
+        {blogPosts
+          .filter(post => post.node.title.length > 0)
+          .map(({ node: post }, index) => (
+            <div
+              className={`blogPostPreview ${index % 2 !== 0 ? "inverse" : ""}`}
+              key={post.id}
+            >
+              <div className="postInfo">
+                <h1 className="tit">
+                  <Link to={`/blogpost/${post.slug}`}>{post.title}</Link>
+                </h1>
+                <div className="meta">
+                  <div className="tags">{/* <Tags list={post.tags} /> */}</div>
+                  <h4 className="date">{post.date}</h4>
+                </div>
+                <p className="excerpt">{post.excerpt}</p>
+                <Button href={`/blogpost/${post.slug}`} variant="outlined">
+                  Read more
+                </Button>
+              </div>
+              {/* <Link to={`/blogpost/${post.slug}`}>
+                  
+                </Link> */}
+              <div className="post-img">
+                <Img alt={post.title} fluid={post.image.fluid} />
+              </div>
             </div>
           ))}
-          <span className="mgBtm__24" />
-          <Link to="/">Go back to the homepage</Link>
-        </div>
-      </Layout>
-    );
-  };
+        <span className="mgBtm__24" />
+      </div>
+    </Layout>
+  )
+}
 
 export default BlogPosts
 

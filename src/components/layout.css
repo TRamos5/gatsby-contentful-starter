@@ -619,7 +619,7 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+} 
 
 /* Add these lines to the end of the layout.css file */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
@@ -627,17 +627,9 @@ html {
   font-family: "Open Sans";
 }
 
-header {
-  /* We use !important here to override
-  the inline styles just for this example.
-  in production code, avoid using it where
-  possible*/
-  background-color: cadetblue
-}
-
-header div {
+/* header div {
   text-align: center;
-}
+} */
 
 header div h1 {
   font-weight: 600;
@@ -665,16 +657,12 @@ h1 {
 .title {
   color: white;
   font-size: 6rem;
-}
+} 
 
 @media only screen and (max-width: 600px) {
   .title {
     font-size: 5rem;
   }
-}
-
-img {
-  margin-bottom: 8px;
 }
 
 .tags {
@@ -701,21 +689,54 @@ p {
   font-weight: 300;
 }
 
-.blogpost a {
-  display: block;
+/* For blogposts.js */
+.blogPostPreview {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem 0.25rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
+}
+
+.blogPostPreview.inverse{
+  flex-direction: row-reverse;
+}
+
+.blogPostPreview:last-child {
+  border-bottom-width: 0;
+}
+
+.postInfo {
+  flex: 1;
+}
+
+.blogPostPreview.inverse > .post-img{
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+.post-img {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.tit {
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
   margin-bottom: 8px;
 }
 
-.blogposts a {
-  display: block;
-  margin-bottom: 8px;
-}
-
-footer {
-  margin-top: 120px;
-}
-
-.mgBtm__24 {
-  display: inline-block;
-  margin-bottom: 24px;
+.excerpt {
+  font-size: 15px;
+  opacity: 0.7;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
 }
