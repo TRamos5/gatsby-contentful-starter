@@ -29,9 +29,14 @@ const BlogPosts = ({ data }) => {
                   <h4 className="date">{post.date}</h4>
                 </div>
                 <p className="excerpt">{post.excerpt}</p>
-                <Button href={`/blogpost/${post.slug}`} variant="outlined">
+                {/* <Button href={`/blogpost/${post.slug}`} variant="outlined" className="readMore">
                   Read more
-                </Button>
+                </Button> */}
+                <div>
+                  <Link to={`/blogpost/${post.slug}`} className="see-more">
+                    Read more
+                  </Link>
+                </div>
               </div>
               {/* <Link to={`/blogpost/${post.slug}`}>
                   
