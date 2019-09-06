@@ -720,7 +720,11 @@ p {
     margin-bottom: 1%;
   }
 
-  .see-more {
+  .buttonEdit {
+    display: none;
+  }
+
+  .tags {
     display: none;
   }
 }
@@ -734,11 +738,12 @@ p {
   margin: 1.5rem;
 } 
 
-.tit {
+.blogTitle {
   font-size: 22px;
   text-transform: uppercase;
   margin-bottom: 2px;
   line-height: 1.2;
+  text-decoration: none;
 }
 
 .meta {
@@ -754,7 +759,7 @@ p {
   margin-bottom: 10px;
 }
 
-.see-more {
+.buttonEdit {
   background-color: rgb(194, 193, 193);
   border: 1px solid rgba(0,0,0,.05);
   border-radius: 34px;
@@ -767,4 +772,43 @@ p {
   padding: 7px 15px;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.paginationButton {
+  background-color: rgb(194, 193, 193);
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: 34px;
+  box-shadow: rgba(0,0,0,.07) 0 2px 2px 0;
+  color: #000;
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: .6;
+  padding: 7px 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.blogPagination {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.prevButton {
+  margin-right: 1%;
+}
+
+.nextButton {
+  margin-left: 1%;
+}
+
+.aboutContainer {
+  box-sizing: border-box;
+  display: flex;
+  margin: 10% auto;
+  max-width: 1140px;;
+  padding-right: 15px;
+  width: 100%;
+  background-color: #231d27;
 }

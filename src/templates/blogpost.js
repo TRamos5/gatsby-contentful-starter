@@ -4,9 +4,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
   const { title, childContentfulBlogPostContentRichTextNode, image, tags, date } = data.contentfulBlogPost
-  // const { previous, next } = this.props.pageContext
+  const { previous, next } = pageContext
   return (
     <Layout>
       <SEO title={title} description={tags} />
@@ -25,7 +25,22 @@ const BlogPost = ({ data }) => {
               </span>
             ))}
           </div>
-          <Link to="/blogposts">View More Posts</Link>
+          <div className="blogPagination">
+            <div className="prevButton">
+            {previous && (
+              <Link to={`/blogpost/${previous.slug}/`} className="paginationButton">
+                Previous
+              </Link>
+            )}
+            </div>
+            <div className="nextButton">
+            {next && (
+              <Link to={`/blogpost/${next.slug}/`} className="paginationButton">
+                Next
+              </Link>
+            )}
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

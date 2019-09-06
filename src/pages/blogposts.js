@@ -1,8 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-// import Tags from "../components/Tags"
-import Button from "@material-ui/core/Button"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
@@ -21,26 +19,27 @@ const BlogPosts = ({ data }) => {
               key={post.id}
             >
               <div className="postInfo">
-                <h1 className="tit">
+                <h1 className="blogTitle">
                   <Link to={`/blogpost/${post.slug}`}>{post.title}</Link>
                 </h1>
                 <div className="meta">
                   <div className="tags">{/* <Tags list={post.tags} /> */}</div>
                   <h4 className="date">{post.date}</h4>
+                  <div className="tags">
+                    {post.tags.map(tag => (
+                      <span className="tag" key={tag}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <p className="excerpt">{post.excerpt}</p>
-                {/* <Button href={`/blogpost/${post.slug}`} variant="outlined" className="readMore">
-                  Read more
-                </Button> */}
                 <div>
-                  <Link to={`/blogpost/${post.slug}`} className="see-more">
+                  <Link to={`/blogpost/${post.slug}`} className="buttonEdit">
                     Read more
                   </Link>
                 </div>
               </div>
-              {/* <Link to={`/blogpost/${post.slug}`}>
-                  
-                </Link> */}
               <div className="post-img">
                 <Img alt={post.title} fluid={post.image.fluid} />
               </div>

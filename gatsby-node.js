@@ -22,15 +22,18 @@ exports.createPages = ({ graphql, actions }) => {
             throw result.errors
         }
 
-        result.data.allContentfulBlogPost.edges.forEach(edge => {
+        const posts = result.data.allContentfulBlogPost.edges;
+        posts.forEach((edge, index) => {
+          const previous = index === 0 ? false : posts[index - 1].node;
+          const next = index === posts.length - 1 ? false : posts[index + 1].node;
             createPage({
                 path: `/blogpost/${edge.node.slug}/`,
                 component: slash(blogPostTemplate),
                 context: {
                     slug: edge.node.slug,
                     id: edge.node.id,
-                    // previous,
-                    // next
+                    previous,
+                    next
                 }
             })
         })

@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
 
 import "./layout.css"
 import ContactButton from "./contactButton"
 import BlogButton from "./blogButton"
+import AboutMe from "./aboutMe"
 import Footer from "./foooter"
 
 const style = ({
@@ -34,6 +34,9 @@ const HomeLayout = ({ children }) => {
                 <ContactButton />
                 <BlogButton />
               </div>
+          </div>
+          <div>
+            <AboutMe />
           </div>
           <Footer />
         </div>
