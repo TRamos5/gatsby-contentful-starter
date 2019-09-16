@@ -28,7 +28,7 @@ export default () => {
                     }
                   }
                   authorPhoto {
-                    fixed(width: 300, height: 300, resizingBehavior: CROP) {
+                    fixed(width: 360, height: 540, resizingBehavior: SCALE) {
                         ...GatsbyContentfulFixed_tracedSVG
                       }
                   }
@@ -42,9 +42,6 @@ export default () => {
         <div className="aboutContainer">
             <Img className="authorPhoto" alt={authorName} fixed={authorPhoto.fixed} />
             <div className="aboutText" style={style.excerptText}>
-                <div className="name">
-                    <h2 style={style.authorName}>{authorName}</h2>
-                </div>
                 <div className="excerpt">
                     <div dangerouslySetInnerHTML={{__html: childContentfulAuthorDescriptionRichTextNode.childContentfulRichText.html}} />
                 </div>

@@ -67,7 +67,7 @@ const HomePage = () => (
       },
       astronomy: {
         childImageSharp: {
-          fluid
+          fixed
         }
       }
     }) => (

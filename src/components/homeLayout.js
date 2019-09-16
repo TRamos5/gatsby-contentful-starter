@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import "./layout.css"
 import ContactButton from "./contactButton"
 import BlogButton from "./blogButton"
-// import AboutMe from "./aboutMe"
+import AboutMe from "./aboutMe"
 import Footer from "./foooter"
 
 const style = ({
@@ -35,9 +35,9 @@ const HomeLayout = ({ children }) => {
                 <BlogButton />
               </div>
           </div>
-          {/* <div>
+          <div>
             <AboutMe />
-          </div> */}
+          </div>
           <Footer />
         </div>
     )

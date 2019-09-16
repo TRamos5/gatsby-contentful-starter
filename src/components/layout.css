@@ -727,6 +727,18 @@ p {
   .tags {
     display: none;
   }
+
+  .aboutContainer {
+    flex-direction: column;
+  }
+
+  .excerpt {
+    margin-top: 2%;
+  }
+
+  .fourOfourTitle {
+    font-size: 20px;
+  }
 }
 
 .postInfo {
@@ -736,6 +748,7 @@ p {
 .post-img {
   flex: 1;
   margin: 1.5rem;
+  align-self: center;
 } 
 
 .blogTitle {
@@ -743,20 +756,27 @@ p {
   text-transform: uppercase;
   margin-bottom: 2px;
   line-height: 1.2;
+}
+
+.blogTitle:link {
   text-decoration: none;
+}
+
+.blogTitle:hover {
+  color: #929191;
 }
 
 .meta {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
 }
 
 .excerpt {
   font-size: 15px;
   opacity: 0.7;
   letter-spacing: 0.4px;
-  margin-bottom: 10px;
+  margin-top: 20%;
+  margin-left: 4%;
 }
 
 .buttonEdit {
@@ -807,8 +827,12 @@ p {
   box-sizing: border-box;
   display: flex;
   margin: 10% auto;
-  max-width: 1140px;;
+  max-width: 1140px;
   padding-right: 15px;
   width: 100%;
   background-color: #231d27;
+}
+
+.fourOfour {
+  padding: 100px;
 }

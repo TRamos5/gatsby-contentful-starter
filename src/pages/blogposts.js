@@ -5,6 +5,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
+const style = ({
+  title: {
+    textDecoration: 'none'
+  }
+})
+
 const BlogPosts = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges
   return (
@@ -19,21 +25,13 @@ const BlogPosts = ({ data }) => {
               key={post.id}
             >
               <div className="postInfo">
-                <h1 className="blogTitle">
-                  <Link to={`/blogpost/${post.slug}`}>{post.title}</Link>
-                </h1>
+                  <Link to={`/blogpost/${post.slug}`} style={style.title}><h1 className="blogTitle">{post.title}</h1></Link>
                 <div className="meta">
-                  <div className="tags">{/* <Tags list={post.tags} /> */}</div>
                   <h4 className="date">{post.date}</h4>
-                  <div className="tags">
-                    {post.tags.map(tag => (
-                      <span className="tag" key={tag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
-                <p className="excerpt">{post.excerpt}</p>
+                <div>
+                  <p className="postExcerpt">{post.excerpt}</p>
+                </div>
                 <div>
                   <Link to={`/blogpost/${post.slug}`} className="buttonEdit">
                     Read more
