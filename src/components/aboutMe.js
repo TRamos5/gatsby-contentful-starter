@@ -1,10 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Grid from "@material-ui/core/Grid"
-import { flexbox } from "@material-ui/system";
-
-import "./layout.css";
 
 const style = ({
     authorName: {

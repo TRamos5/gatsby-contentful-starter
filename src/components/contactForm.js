@@ -124,45 +124,6 @@ class ContactForm extends React.Component {
             </label>
           </div>
 
-          {/* *** new input *** */}
-
-          {/* <div>
-            <label htmlFor="name">
-              Name
-              <input
-                type="text"
-                name="name"
-                value={this.state.name}
-                onChange={this.handleNameChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="email">
-              Email
-              <input
-                type="email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleEmailChange}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="message">
-              Message
-              <textarea
-                name="message"
-                value={this.state.message}
-                onChange={this.handleMessageChange}
-                rows="6"
-                required
-              />
-            </label>
-          </div>
-          <div>
-            <button type="submit">Send</button>
-          </div> */}
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="name">Name</InputLabel>
             <Input

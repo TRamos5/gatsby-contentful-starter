@@ -1,7 +1,5 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-
 
 // import SEO from "../components/seo"
 import Layout from "../components/homeLayout"
@@ -61,13 +59,7 @@ const HomePage = () => (
         title,
         content,
         image: {
-          //fixed
           file: { url }
-        }
-      },
-      astronomy: {
-        childImageSharp: {
-          fixed
         }
       }
     }) => (
@@ -75,8 +67,6 @@ const HomePage = () => (
       <Layout>
       <div class="wrapper" style={style.wrapper}>
         <img style={style.backgroundImg} src={url} />
-        {/* <Img style={style.backgroundImg} fixed={fixed} /> */}
-        {/* <Img style={style.backgroundImg} fluid={fluid} /> */}
         <Particle />
         <div style={style.main}>
           <h1 className="title">{title}</h1>

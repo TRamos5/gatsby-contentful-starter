@@ -615,21 +615,9 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-} 
 
 /* Add these lines to the end of the layout.css file */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
-html {
-  font-family: "Open Sans";
-}
-
-/* header div {
-  text-align: center;
-} */
 
 header div h1 {
   font-weight: 600;
@@ -658,12 +646,6 @@ h1 {
   color: white;
   font-size: 6rem;
 } 
-
-@media only screen and (max-width: 600px) {
-  .title {
-    font-size: 5rem;
-  }
-}
 
 .tags {
   margin-bottom: 24px;
@@ -705,40 +687,6 @@ p {
 
 .blogPostPreview:last-child {
   border-bottom-width: 0;
-}
-
-@media only screen and (max-width: 700px) {
-  .blogPostPreview {
-    display: block;
-    justify-content: center;
-    padding: 1rem 0.25rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.04);
-    margin-bottom: 20px;
-  }
-
-  .postInfo {
-    margin-bottom: 1%;
-  }
-
-  .buttonEdit {
-    display: none;
-  }
-
-  .tags {
-    display: none;
-  }
-
-  .aboutContainer {
-    flex-direction: column;
-  }
-
-  .excerpt {
-    margin-top: 2%;
-  }
-
-  .fourOfourTitle {
-    font-size: 20px;
-  }
 }
 
 .postInfo {
@@ -835,4 +783,47 @@ p {
 
 .fourOfour {
   padding: 100px;
+}
+
+@media only screen and (max-width: 700px) {
+
+  html {
+    font-size: 100%;
+  }
+
+  .title {
+    font-size: 5rem;
+  }
+
+  .blogPostPreview {
+    display: block;
+    justify-content: center;
+    padding: 1rem 0.25rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+    margin-bottom: 20px;
+  }
+
+  .postInfo {
+    margin-bottom: 1%;
+  }
+
+  .buttonEdit {
+    display: none;
+  }
+
+  .tags {
+    display: none;
+  }
+
+  .aboutContainer {
+    flex-direction: column;
+  }
+
+  .excerpt {
+    margin-top: 2%;
+  }
+
+  .fourOfourTitle {
+    font-size: 20px;
+  }
 }
