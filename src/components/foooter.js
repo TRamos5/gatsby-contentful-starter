@@ -61,13 +61,14 @@ export default () => {
       <a 
       href="https://www.instagram.com/travis_ramos/" 
       target="_blank"
+      rel="noopener noreferrer"
       style={style.instaBox}
       >
         <Img fixed={data.insta.childImageSharp.fixed} />
       </a>
       <p style={style.paraBox}>
         Powered by
-        <a style={style.anchor} href="">TraVision</a>
+        <a style={style.anchor} href="/">TraVision</a>
       </p>
     </footer>
   )

@@ -66,7 +66,7 @@ const HomePage = () => (
       <>
       <Layout>
       <div class="wrapper" style={style.wrapper}>
-        <img style={style.backgroundImg} src={url} />
+        <img style={style.backgroundImg} alt="HeroImage" src={url} />
         <Particle />
         <div style={style.main}>
           <h1 className="title">{title}</h1>

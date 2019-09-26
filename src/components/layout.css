@@ -817,6 +817,7 @@ p {
 
   .aboutContainer {
     flex-direction: column;
+    width: 360px;
   }
 
   .excerpt {
