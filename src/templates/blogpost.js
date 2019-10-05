@@ -5,8 +5,9 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 
 const BlogPost = ({ data, pageContext }) => {
-  const { title, childContentfulBlogPostContentRichTextNode, image, tags, date } = data.contentfulBlogPost
+  const { title, content, image, tags, date } = data.contentfulBlogPost
   const { previous, next } = pageContext
+  const body = content.childMarkdownRemark.html
   return (
     <Layout>
       <SEO title={title} description={tags} />
@@ -17,7 +18,7 @@ const BlogPost = ({ data, pageContext }) => {
         <div className="wrapper">
           <h1>{title}</h1>
           <p style={{ display: "block" }}>{date}</p>
-          <div dangerouslySetInnerHTML={{__html: childContentfulBlogPostContentRichTextNode.childContentfulRichText.html}} />
+          <div dangerouslySetInnerHTML={{__html: body}} />
           <div className="tags">
             {tags.map(tag => (
               <span className="tag" key={tag}>
@@ -50,7 +51,7 @@ const BlogPost = ({ data, pageContext }) => {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query blogPostQuery($slug: String!) {
     site {
       siteMetadata {
         title
@@ -63,11 +64,11 @@ export const pageQuery = graphql`
           ...GatsbyContentfulFluid_tracedSVG
         }
       }
-      childContentfulBlogPostContentRichTextNode {
-        childContentfulRichText {
+      content {
+        childMarkdownRemark {
           html
         }
-      }
+    }
       tags
       author {
         authorName
