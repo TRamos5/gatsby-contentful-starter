@@ -40,7 +40,7 @@ class ContactButton extends React.Component {
 
     return (
       <div>
-        <Button className={classes.button} onClick={this.toggleDrawer('top', true)} variant="outlined">LET'S WORK TOGETHER</Button>
+        <Button className={classes.button} onClick={this.toggleDrawer('top', true)} variant="outlined">This Button Opens Email Slider</Button>
         <Drawer anchor="top" open={this.state.top} onClose={this.toggleDrawer('top', false)}>
           <div
             tabIndex={0}

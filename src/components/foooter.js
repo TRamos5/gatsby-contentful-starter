@@ -37,16 +37,16 @@ const style = {
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      health: file(relativePath: { eq: "images/health.png" }) {
+      gatsby: file(relativePath: { eq: "images/gatsby-icon.png" }) {
         childImageSharp {
-          fixed(width: 58, height: 50) {
+          fixed(width: 58, height: 58) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       insta: file(relativePath: { eq: "images/insta.png" }) {
           childImageSharp {
-              fixed(width: 50, height: 50) {
+              fixed(width: 58, height: 58) {
                   ...GatsbyImageSharpFixed
               }
           }
@@ -56,7 +56,7 @@ export default () => {
   return (
     <footer style={style.footerContain}>
       <div style={style.logoBox}>
-        <Img fixed={data.health.childImageSharp.fixed} />
+        <Img fixed={data.gatsby.childImageSharp.fixed} />
       </div>
       <a 
       href="https://www.instagram.com/travis_ramos/" 

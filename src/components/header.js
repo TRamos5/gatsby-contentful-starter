@@ -36,7 +36,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: `TraVision`,
+  siteTitle: `Contentful Starter`,
 }
 
 export default Header

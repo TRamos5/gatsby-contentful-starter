@@ -1,7 +1,7 @@
 {
-  "name": "TraVision",
+  "name": "Gatsby Contenful",
   "private": true,
-  "description": "A development blog created by for the public.",
+  "description": "A Gatsby starter for the public.",
   "version": "0.1.0",
   "author": "Travis Ramos <travision.dev@gmail.com>",
   "dependencies": {

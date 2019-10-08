@@ -9,8 +9,8 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `TraVision`,
-    description: `Development Studio and Blog`,
+    title: `Gatsby Contentful Starter`,
+    description: `Starter for Contentful and Gatsby`,
     author: `@t_ram5`,
   },
   plugins: [
@@ -27,13 +27,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `TraVision`,
-        short_name: `TraVision`,
+        name: `Gatsby Contentful`,
+        short_name: `GB`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/health.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {

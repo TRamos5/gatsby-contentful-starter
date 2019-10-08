@@ -103,7 +103,7 @@ class ContactForm extends React.Component {
             className={classes.emailLink}
             href="mailto:travision.dev@gmail.com"
           >
-            travision.dev@gmail.com
+            putYourEmailHere@gmail.com
           </a>
         </h5>
 

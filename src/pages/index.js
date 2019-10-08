@@ -1,9 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-// import SEO from "../components/seo"
 import Layout from "../components/homeLayout"
-import Particle from "../components/particle"
 import "../components/layout.css"
 
 const style = ({
@@ -45,13 +43,6 @@ const HomePage = () => (
             }
           }
         }
-        astronomy: file(relativePath: { eq: "images/astronomy.png" }) {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
       }
     `}
     render={({
@@ -67,7 +58,6 @@ const HomePage = () => (
       <Layout>
       <div class="wrapper" style={style.wrapper}>
         <img style={style.backgroundImg} alt="HeroImage" src={url} />
-        <Particle />
         <div style={style.main}>
           <h1 className="title">{title}</h1>
           <h3 style={style.content}>{content}</h3>

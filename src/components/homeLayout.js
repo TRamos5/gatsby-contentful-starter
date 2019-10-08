@@ -27,8 +27,8 @@ const HomeLayout = ({ children }) => {
         <div>
           <main>{children}</main>
           <div style={style.bottomContain} className="container">
-              <h1>Learning Opens The Gates To Freedom</h1>
-              <p>Everyone has a vision, let's work together to see it through! Part of my passion is teaching others what I have learned myself.</p>
+              <h1>I Hope You Enjoy The Starter</h1>
+              <p>Feel free to customize everything to your liking, it's yours!</p>
               <hr/>
               <div style={style.buttonDiv} className="buttonDiv">
                 <ContactButton />
