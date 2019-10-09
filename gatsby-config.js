@@ -1,7 +1,7 @@
 const dotenv = require("dotenv");
 const path = require(`path`)
 
-if (process.env.ENVIRONMENT !== "production") {
+if (process.env.ENVIRONMENT !== "productio") {
   dotenv.config();
 }
 
