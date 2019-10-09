@@ -644,7 +644,7 @@ h1 {
 
 .title {
   color: white;
-  font-size: 6rem;
+  font-size: 4rem;
 } 
 
 .tags {
@@ -654,7 +654,7 @@ h1 {
 .tags span.tag {
   font-weight: bold;
   margin-right: 8px;
-  background: cadetblue;
+  background: #663399;
   padding: 2px 12px;
   border-radius: 4px;
   color: white;
@@ -778,7 +778,7 @@ p {
   max-width: 1140px;
   padding-right: 15px;
   width: 100%;
-  background-color: #231d27;
+  background-color: #1e1612;
 }
 
 .fourOfour {

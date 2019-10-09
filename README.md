@@ -2,10 +2,14 @@
 
 A starter for Gatsby using Contentful as CMS with optional deploy to Netlify.
 
+![Home Screen](/src/images/homescreen.png?raw=true "Home Screen")
+
+![Blogs](/src/images/blogs.png?raw=true "All Blogs View")
+
 ## JAM
 
 - JavaScript - [React](https://reactjs.org)
-- API - [GraphQL](https://graphql.org) - [Apollo](https://www.apollographql.com/docs/react/)
+- API - [GraphQL](https://graphql.org)
 - Markup
 
 ## Build Tools
