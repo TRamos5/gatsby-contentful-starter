@@ -17,7 +17,7 @@ const style = {
     paddingLeft: "15px",
     paddingRight: "15px",
     width: "100%",
-    backgroundColor: "#353c43",
+    backgroundColor: "#5b544c",
     height: "25vh",
   },
   instaBox: {
@@ -68,7 +68,7 @@ export default () => {
       </a>
       <p style={style.paraBox}>
         Powered by
-        <a style={style.anchor} href="/">TraVision</a>
+        <a style={style.anchor} href="https://travision.dev">TraVision</a>
       </p>
     </footer>
   )
