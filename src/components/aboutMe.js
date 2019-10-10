@@ -22,7 +22,7 @@ export default () => {
                   authorDescription {
                     childMarkdownRemark {
                       html
-                    }
+                    } 
                   }
                   authorPhoto {
                     fixed(width: 360, height: 540, resizingBehavior: SCALE) {
@@ -35,13 +35,12 @@ export default () => {
     `)
 
     const { authorName, authorPhoto, authorDescription } = data.contentfulBlogPost.author
-    const body = authorDescription.html;
     return (
         <div className="aboutContainer">
             <Img className="authorPhoto" alt={authorName} fixed={authorPhoto.fixed} />
             <div className="aboutText" style={style.excerptText}>
                 <div className="excerpt">
-                   <p dangerouslySetInnerHTML={{__html: body}} />
+                   <p dangerouslySetInnerHTML={{__html: authorDescription.childMarkdownRemark.html}} />
                 </div>
             </div>
         </div>
