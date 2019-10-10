@@ -10,6 +10,9 @@ const style = ({
         paddingRight: '15px',
         paddingLeft: '15px',
         width: '75%',
+    },
+    aboutText: {
+      color: '#706c6b'
     }
   })
 
@@ -40,7 +43,7 @@ export default () => {
             <Img className="authorPhoto" alt={authorName} fixed={authorPhoto.fixed} />
             <div className="aboutText" style={style.excerptText}>
                 <div className="excerpt">
-                   <p dangerouslySetInnerHTML={{__html: authorDescription.childMarkdownRemark.html}} />
+                   <div style={style.aboutText} dangerouslySetInnerHTML={{__html: authorDescription.childMarkdownRemark.html}} />
                 </div>
             </div>
         </div>
