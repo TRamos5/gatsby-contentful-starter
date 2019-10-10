@@ -9,6 +9,7 @@ const style = ({
     excerptText: {
         paddingRight: '15px',
         paddingLeft: '15px',
+        width: '75%',
     }
   })
 
@@ -18,8 +19,8 @@ export default () => {
             contentfulBlogPost {
                 author {
                   authorName
-                  childContentfulAuthorDescriptionRichTextNode {
-                    childContentfulRichText {
+                  authorDescription {
+                    childMarkdownRemark {
                       html
                     }
                   }
@@ -33,13 +34,14 @@ export default () => {
         }
     `)
 
-    const { authorName, authorPhoto, childContentfulAuthorDescriptionRichTextNode } = data.contentfulBlogPost.author
+    const { authorName, authorPhoto, authorDescription } = data.contentfulBlogPost.author
+    const body = authorDescription.html;
     return (
         <div className="aboutContainer">
             <Img className="authorPhoto" alt={authorName} fixed={authorPhoto.fixed} />
             <div className="aboutText" style={style.excerptText}>
                 <div className="excerpt">
-                    <div dangerouslySetInnerHTML={{__html: childContentfulAuthorDescriptionRichTextNode.childContentfulRichText.html}} />
+                   <p dangerouslySetInnerHTML={{__html: body}} />
                 </div>
             </div>
         </div>

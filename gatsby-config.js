@@ -43,15 +43,8 @@ module.exports = {
         accessToken
       }
     },
-    `@contentful/gatsby-transformer-contentful-richtext`,
     {
       resolve: `gatsby-plugin-material-ui`
-    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-      pathToConfigModule: `src/utils/typography`,
-      }
     },
     {
       resolve: `gatsby-transformer-remark`,
